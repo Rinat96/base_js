@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        //Задание №1
+        /*
+        1.объявлены переменные a,b,c,d, в а и b присвоена 1
+        2.в переменную с записывается инкрементированная а (а=2)
+        3.вывод с на экран (с=2)
+        */
+        let a = 1, b = 1, c, d;
+        c = ++a;
+        alert(c);
+        /*
+        1.в переменную d записывается значение переменной b (b=1), после чего переменная b инкрементируется (b=2)
+        2.вывод d на экран (d=1)
+        */
+        d = b++;
+        alert(d);
+        /*
+        1.инкрементируется переменная а (а=3), в переменную с записывается результат суммировнаия 2+a (c=5) 
+        2.вывод с на экран (с=5)
+        */
+        c = 2 + ++a;
+        alert(c);
+        /*
+        1.в переменную d записывается результат суммировнаия 2+b (c=2+2=4),затем инкрементируется переменная b (b=3)
+        2.вывод с на экран (d=4)
+        3.вывод с на экран (a=3)
+        4.вывод с на экран (b=3)
+        */        
+        d = 2 + b++;
+        alert(d);
+        alert(a);
+        alert(b);
+        // Задание №2
+        /*
+        1.в переменную а записываем 2 (переменная а объявлена ранее)
+        2.объявляем переменную х и записываем в нее результат суммирования х= 1+а (х=5), перед этим вычисляется а=а*2=4
+        */
+        a = 2;
+        let x = 1 + (a *= 2);
+        // Задание №3
+        a = parseInt(prompt("Введите число А -"));
+        b = parseInt(prompt("Введите число B -"));
+        if (Math.sign(a * b) < 0) {
+            alert(a + b)
+        }
+        else if (Math.sign(a) > 0) {
+            alert(a-b)
+        } 
+        else {
+            alert(a*b)
+        }
+        // Задание №4
+        function getSum(a, b) {
+            return a + b;            
+        }
+        function getDifferece(a, b) {
+            return a - b;
+        }
+        function getMultiplication(a, b) {
+            return a * b;
+        }
+        function getDivision(a, b) {
+            return a / b;
+        }
+        // Задание №5
+        let arg1 = parseInt(prompt("Введите число А -"));
+        let arg2 = parseInt(prompt("Введите число B -"));
+        let operation = prompt('Выберите математическую операцию: сложение - "+", вычитание - "-", умножение - "*", деление - "/" ');
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+":
+                    alert("Результат - " + getSum(arg1, arg2));
+                    break;
+                case "-":
+                    alert("Результат - " + getDifference(arg1, arg2));
+                    break;
+                case "*":
+                    alert("Результат - " + getMultiplication(arg1, arg2));
+                    break;
+                case "/":
+                    alert("Результат - " + getDivision(arg1, arg2));
+                    break;     
+                default:
+                alert("Такой операции не предусмотрено");
+                    break;
+            }
+        }
+        mathOperation(arg1, arg2, operation);
+        // Задание №6
+        let getMoney = prompt("Введите количество денег которое вы хотите положить на вклад -");
+        let lastChar = getMoney.charAt(getMoney.length - 1);
+        let ruble = "";
+        function getCase(lastChar) {
+            switch (lastChar) {
+                case "0":
+                    ruble = "рублей";
+                    break;
+                case "1":
+                    ruble = "рубль";
+                    break;
+                case "2":
+                    ruble = "рубля";
+                    break;
+                case "3":
+                    ruble = "рубля";
+                    break;
+                case "4":
+                    ruble = "рубля";
+                    break;
+                case "5":
+                    ruble = "рублей";
+                    break;
+                case "6":
+                    ruble = "рублей";
+                    break;
+                case "7":
+                    ruble = "рублей";
+                    break;
+                case "8":
+                    ruble = "рублей";
+                    break;
+                case "9":
+                    ruble = "рублей";
+                    break;
+                default:
+                alert("Ошибка!");
+                    break;
+            }
+        }
+        getCase (lastChar);
+        alert(`Ваша сумма в ${getMoney} ${ruble} успешно зачислена`);
+    </script>
+</body>
+</html>
